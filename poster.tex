@@ -22,6 +22,8 @@
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
 
+
+\bibliographystyle{abbrvnat}
 % ====================
 % Lengths
 % ====================
@@ -98,7 +100,7 @@
 
   \begin{block}{Introduction}
 
-    Some LOL block contents, teste by a diagram, followed by a dummy paragraph.
+    Some Ok block contents, teste by a diagram, followed by a dummy paragraph.
 
     \begin{figure}
       \centering
@@ -150,7 +152,7 @@
 
   \begin{block}{Saliency Maps}
 
-    GradCAM!!!
+    GRADCAM OMG!!!!
 
   \end{block}
 
@@ -284,7 +286,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel dapibus era
   \end{block}
 
   \begin{block}{References}
-    
+    \nocite{*}
+    \bibliography{bibliography}
+
   \end{block}
 
 \end{column}

@@ -84,7 +84,6 @@
 % Acredito que podemos usar uma estrutura assim:
 
 % Introduction
-% Neural Networks
 % Feature Visualization
 % Saliency Maps
 % LIME in Images
@@ -100,31 +99,9 @@
 
   \begin{block}{Introduction}
 
-    Some Ok block contents, teste by a diagram, followed by a dummy paragraph.
+    As artificial intelligence (AI) becomes part of critical fields like healthcare, finance, and autonomous vehicles, it’s important to understand how these systems make decisions. This is where Explainable AI (XAI) comes in. XAI helps make AI models, which are often complex, easier to understand and interpret. This ensures that AI systems are trusted and used responsibly.
 
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}[scale=6]
-        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
-      \end{tikzpicture}
-      \caption{A figure caption.}
-    \end{figure}
-
-    SAI DA FRENTELorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
-    eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum
-    lobortis augue, ut lobortis turpis rhoncus sed. Proin feugiat nibh a
-    lacinia dignissim. Proin scelerisque, risus eget tempor fermentum, ex
-    turpis condimentum urna, quis malesuada sapien arcu eu purus.
-
-  \end{block}
-
-  \begin{block}{Neural Networks and Convolutional Neural Networks (CNNs)}
-    Neural networks are a class of machine learning algorithms inspired by the structure and function of the human brain. 
-    They consist of layers of interconnected nodes (neurons) that process and transform input data to make predictions or classifications. 
-    Each connection between neurons has an associated weight that is adjusted during training to minimize prediction errors. 
-    \newline
+    Neural networks are powerful tools for tasks like recognizing images or making predictions. However, they are often seen as "black boxes" because it’s hard to explain how they reach their decisions. This lack of clarity can be a problem in areas where understanding the reason behind a decision is as important as the result itself.
     \begin{columns}
       
       \begin{column}{0.6\textwidth}
@@ -136,16 +113,14 @@
       \end{column}
 
       \begin{column}{0.4\textwidth}        
-        A specialized type of neural network, \emph{Convolutional Neural Networks (CNNs)}, is particularly well-suited for tasks involving images. 
-        By applying convolution operations, CNNs automatically extract meaningful features from the input, making them highly effective for applications like image recognition, object detection, and video analysis. 
-        This specialization in handling this kind of structured data has made CNNs a cornerstone of modern computer vision.
+        
+        \textbf{Convolutional Neural Networks (CNNs)} are neural networks designed for image and spatial data. They process parts of an image (like edges or textures) and combine these features to make decisions, making them ideal for tasks like face or object recognition.
+        However, CNNs are also complex, and it can be hard to tell what they are focusing on and why. 
+        XAI tools can help with this by showing how the CNN works step by step.
       \end{column}
     
     \end{columns}
-
-    CNNs are widely regarded as state-of-the-art models in various computer vision applications. 
-    However, their highly complex structure poses a significant challenge in interpreting their results and explaining their decisions, particularly in high-risk scenarios. 
-    
+    We will explore methods such as Feature Visualization, Saliency Maps, and LIME focused on explaining black-box image models like CNNs, aiming to create more robust, reliable, and less biased networks.
   \end{block}
 
   \begin{block}{Feature Visualization}

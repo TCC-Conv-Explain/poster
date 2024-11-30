@@ -22,7 +22,7 @@
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
 
-
+\setcitestyle{numbers}
 \bibliographystyle{abbrvnat}
 % ====================
 % Lengths
@@ -129,6 +129,29 @@
     This technique, called \emph{Activation Maximization}, can be modeled by the formula below, using the \emph{Gradient Ascent} method:
     \[x_{t + 1} = x_{t} + \mu \;\frac{\partial a(\theta, x_t)}{\partial x_t}\]
     Where \(x_t\) represents an image at iteration \(t\), \(\mu\) represents a tunable hyperparameter and the function \(a\) represents the forward pass of a unit in a Neural Network with parameters \(\theta\).
+    
+    By defining \(x_0\) as a specific image or just random noise, one can create \emph{dreamy-like} \cite{deepdream} images representing that will maximize a certain set of neurons of a Network.
+    \begin{columns}  
+      \begin{column}{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\linewidth]{images/random_image_dream.png}
+          \caption{Feature Visualization of CNN VGG16 using a random image}
+        \end{figure}  
+      \end{column}
+
+      \begin{column}{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\linewidth]{images/ime-dream.png}
+          \caption{Feature Visualization of CNN VGG16 using a photo of IME-USP}
+        \end{figure}
+      \end{column}
+      
+    \end{columns}
+
+    By close inspection in both images, one can notice that certain characteristic features like animal's eyes and dog's faces emerge,
+    showing that the network learned those representations and certain layers are maximized by the presence of those features in images.
   \end{block}
 
   \begin{block}{Saliency Maps}

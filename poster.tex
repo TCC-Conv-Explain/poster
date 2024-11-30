@@ -124,18 +124,11 @@
   \end{block}
 
   \begin{block}{Feature Visualization}
-
-    Nam vulputate nunc felis, non condimentum lacus porta ultrices. Nullam sed
-    sagittis metus. Etiam consectetur gravida urna quis suscipit.
-
-    \begin{itemize}
-      \item \textbf{Mauris tempor} risus nulla, sed ornare
-      \item \textbf{Libero tincidunt} a duis congue vitae
-      \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
-    \end{itemize}
-
-    Eget augue porta, bibendum venenatis tortor.
-
+    CNNs can learn abstract features and concepts from images. 
+    One can use techniques such as Feature Visualization to visualize the learned features by maximizing a network's neuron (or a set of neurons) value.
+    This technique, called \emph{Activation Maximization}, can be modeled by the formula below, using the \emph{Gradient Ascent} method:
+    \[x_{t + 1} = x_{t} + \mu \;\frac{\partial a(\theta, x_t)}{\partial x_t}\]
+    Where \(x_t\) represents an image at iteration \(t\), \(\mu\) represents a tunable hyperparameter and the function \(a\) represents the forward pass of a unit in a Neural Network with parameters \(\theta\).
   \end{block}
 
   \begin{block}{Saliency Maps}

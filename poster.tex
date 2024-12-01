@@ -215,7 +215,20 @@
   \end{block}
 
   \begin{block}{Experiments}
+    We can check a network's robustness empirically by applying different kinds of filters 
+    to an image and verifying changes in predictions and changes in focus regions using GradCAM.
+    For example, here, we applied a brightness shift in a Red Fox image to check prediction and GradCAM variation in ResNet18:
 
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.96\linewidth]{images/fox-grad-cam-exp.png}
+      \caption{Effect of brightness variation of a Red Fox image in ResNet18 Model}
+    \end{figure}
+
+    A clear correlation between white objects and a high presence of the color white in the image is reported 
+    (predictions change to \textit{Polar Bear} or \textit{Envelope} in really bright images).
+    Also, the GradCAM shows that, when the image is highly occluded by brightness, the fox's face is almost unrecognizable, 
+    making the model \textit{"pay attention"} to the animal's tail, since this feature is still recognizable in this high brightness setting.
   \end{block}
 
   \begin{block}{Conclusion}

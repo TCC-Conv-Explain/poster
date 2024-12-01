@@ -157,10 +157,30 @@
     showing that the network learned those representations and certain layers are maximized by the presence of those features in images.
   \end{block}
 
-  \begin{block}{Saliency Maps}
+  \begin{block}{GradCAM}
 
-    GRADCAM OMG!!!!
+    At the last convolutional layer of a network, there are multiple channels representing extracted features from the image. Those features may be of multiple natures, such as presence of certain objects, simmetry, contrast, etc. By inspecting those channels, we can get an insight into what information the network is using to make its decision.
 
+    The problem is: how can we know which channels are being useful to the decision? GradCAM solves this by averaging the feature maps weighted by the \textbf{gradient with regard to the output}. After that, we filter out negative influences by passing the output through the ReLU function. We can then resize the resulting map to the same size and overlay it over the original image to inspect the results.
+    
+    \begin{columns}  
+      \begin{column}{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\linewidth]{images/GC_ursopolar.png}
+          \caption{GradCAM of a polar bear passed though ResNET. Network classification: polar bear, Ursus maritimus.}
+        \end{figure}  
+      \end{column}
+
+      \begin{column}{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\linewidth]{images/GC_aviao.png}
+          \caption{GradCAM of a airplane passed though ResNET. Network classification: airliner}
+        \end{figure}
+      \end{column}
+      
+    \end{columns}
   \end{block}
 
   \begin{alertblock}{A highlighted block}
@@ -193,7 +213,7 @@
     LIME can be used in images to create masks that represent areas that were more important for a model's decision.
     
     \begin{columns}
-      \begin{column}{0.5\textwidth}
+      \begin{column}{0.2\textwidth}
         \begin{figure}
           \centering
           \includegraphics[width=0.85\linewidth]{images/dog.jpeg}
@@ -201,7 +221,7 @@
         \end{figure} 
       \end{column}
 
-      \begin{column}{0.5\textwidth}
+      \begin{column}{0.2\textwidth}
         \begin{figure}
           \centering
           \includegraphics[width=0.85\linewidth]{images/lime.png}

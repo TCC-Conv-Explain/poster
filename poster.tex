@@ -21,6 +21,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
+\usepackage{amsmath}
 
 \setcitestyle{numbers}
 \bibliographystyle{abbrvnat}
@@ -64,6 +65,8 @@
 % use this to include logos on the left and/or right side of the header:
 % \logoright{\includegraphics[height=7cm]{logo1.pdf}}
 % \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+
+\newcommand{\argmin}{\mathop{\mathrm{arg\,min}}}
 
 % ====================
 % Body
@@ -179,25 +182,36 @@
 
   \begin{block}{LIME in Images}
 
-    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-    commodo in metus.
+    LIME (Local interpretable model-agnostic explanations) is a technique to explain a complex model's decisions 
+    by creating a simpler explainable model based on the complex model. A LIME model can be defined by the expression bellow:
+    
+    \[g^*(x) = \argmin_{g} L(f, g, \pi_x) + \Omega(g)\]
+    
+    Where \(L\) is a loss function to compare the simpler model performance with the complex model performance in the region close to \(x\), defined by \(\pi_x\). 
+    \(\Omega\) is a function that returns a \textit{complexity metric} for a simple model \(g\).
 
-    \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
-    \end{enumerate}
+    LIME can be used in images to create masks that represent areas that were more important for a model's decision.
+    
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.85\linewidth]{images/dog.jpeg}
+          \caption{Original Image}
+        \end{figure} 
+      \end{column}
 
+      \begin{column}{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.85\linewidth]{images/lime.png}
+          \caption{Masked image using LIME}
+        \end{figure}
+      \end{column}
+
+    \end{columns}
+
+    
   \end{block}
 
   \begin{block}{Experiments}

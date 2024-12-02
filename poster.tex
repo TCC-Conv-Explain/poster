@@ -123,7 +123,6 @@
       \end{column}
     
     \end{columns}
-    We will explore methods such as Feature Visualization, Saliency Maps, and LIME focused on explaining black-box image models like CNNs, aiming to create more robust, reliable, and less biased networks.
   \end{block}
 
   \begin{block}{Feature Visualization}
@@ -167,7 +166,7 @@
       \begin{column}{0.5\textwidth}
         \begin{figure}
           \centering
-          \includegraphics[width=\linewidth]{images/GC_ursopolar.png}
+          \includegraphics[width=0.9\linewidth]{images/GC_ursopolar.png}
           \caption{GradCAM of a polar bear passed though ResNET. Network classification: polar bear, Ursus maritimus.}
         \end{figure}  
       \end{column}
@@ -175,25 +174,13 @@
       \begin{column}{0.5\textwidth}
         \begin{figure}
           \centering
-          \includegraphics[width=\linewidth]{images/GC_aviao.png}
+          \includegraphics[width=0.9\linewidth]{images/GC_aviao.png}
           \caption{GradCAM of a airplane passed though ResNET. Network classification: airliner}
         \end{figure}
       \end{column}
       
     \end{columns}
   \end{block}
-
-  \begin{alertblock}{A highlighted block}
-
-    This block catches your eye, so \textbf{important stuff} should probably go
-    here.
-
-    Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi
-    consectetur mauris quam, at finibus elit auctor ac. Aliquam erat volutpat.
-    Aenean at nisl ut ex ullamcorper eleifend et eu augue. Aenean quis velit
-    tristique odio convallis ultrices a ac odio.
-  \end{alertblock}
-
 \end{column}
 
 \separatorcolumn
@@ -213,18 +200,18 @@
     LIME can be used in images to create masks that represent areas that were more important for a model's decision.
     
     \begin{columns}
-      \begin{column}{0.2\textwidth}
+      \begin{column}{0.5\textwidth}
         \begin{figure}
           \centering
-          \includegraphics[width=0.85\linewidth]{images/dog.jpeg}
+          \includegraphics[width=0.9\linewidth]{images/dog.jpeg}
           \caption{Original Image}
         \end{figure} 
       \end{column}
 
-      \begin{column}{0.2\textwidth}
+      \begin{column}{0.5\textwidth}
         \begin{figure}
           \centering
-          \includegraphics[width=0.85\linewidth]{images/lime.png}
+          \includegraphics[width=0.9\linewidth]{images/lime.png}
           \caption{Masked image using LIME}
         \end{figure}
       \end{column}
